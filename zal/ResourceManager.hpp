@@ -9,7 +9,6 @@ class ResourceManager {
   public:
     ResourceManager() // utwórz obiekt resource
     {
-      m_resource = new Resource();
       m_resource = new Resource;
     }
     ~ResourceManager() // zwolnij obiekt resource
