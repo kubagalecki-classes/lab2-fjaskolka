@@ -20,7 +20,7 @@ class ResourceManager {
 
 ResourceManager::ResourceManager()// konstruktor
 {
-  m_resource = new Resource();
+  m_resource = new Resource;
 }
 
 ResourceManager::~ResourceManager()// destruktor
