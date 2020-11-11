@@ -11,7 +11,7 @@ class ResourceManager {
   public:
     ResourceManager(); // utwórz obiekt resource
     {
-      m_resource = new Resource();
+      m_resource = new Resource;
     }
     ~ResourceManager(); // zwolnij obiekt resource
     {
@@ -34,6 +34,7 @@ class ResourceManager {
     ResourceManager(ResourceManager&& a); // konstruktor przenoszący
     {
       m_resource = a.m_resource;
+      a.m_resource = nullptr;   
     }
     double get()
     {
