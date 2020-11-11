@@ -19,21 +19,26 @@ class ResourceManager {
     {
       m_resource = new Resource(*(a.m_resource));
     }
-    ResourceManager& operator=(ResourceManager&& a) // operator przypisania
-    {
-      if(&a == this)
-      {
-        return *this;
-      }
-      delete m_resource;
-      m_resource = new Resource(*(a.m_resource));
-      return *this;
-    }
+    ResourceManager& operator=(const ResourceManager& a) //kopiujsacy operator przypisania
+		{
+			delete m_resource;
+        if (&a == this) {
+        }
+            m_resource = new Resource(*(a.m_resource));
+            return *this;
+		}
     ResourceManager(ResourceManager&& a) // konstruktor przenoszący
     {
       m_resource = a.m_resource;
       a.m_resource = nullptr;   
     }
+    ResourceManager& operator=(ResourceManager&& a)  //przenoszacy operator przypisania
+		{ 
+			delete m_resource;
+      m_resource=a.m_resource;
+      a.m_resource=nullptr;
+      return *this;
+		}
     double get()
     {
       return m_resource->get();
